@@ -1,3 +1,4 @@
+
 import hashlib
 import os
 import tempfile
@@ -33,54 +34,70 @@ st.set_page_config(
 st.markdown(
     """
 <style>
-.stApp { background: #f5f9fa; }
+.stApp {
+    background: #f5f9fa;
+    color: #243447;
+}
+
 .block-container {
     padding-top: 1.5rem;
     padding-bottom: 6rem;
     max-width: 1250px;
 }
+
 section[data-testid="stSidebar"] {
     background: #ffffff;
     border-right: 1px solid #e5eeee;
 }
-section[data-testid="stSidebar"] > div { padding-top: 1rem; }
+
+section[data-testid="stSidebar"] > div {
+    padding-top: 1rem;
+}
+
 .sidebar-brand {
     text-align: center;
     padding: 8px 10px 18px 10px;
 }
+
 .sidebar-icon {
     font-size: 3.2rem;
     line-height: 1;
     margin-bottom: 10px;
 }
+
 .sidebar-title {
     font-size: 1.45rem;
     font-weight: 750;
     color: #087f7a;
     margin-bottom: 8px;
 }
+
 .sidebar-subtitle {
     font-size: .82rem;
     line-height: 1.55;
     color: #64748b;
 }
+
 .sidebar-divider {
     height: 1px;
     background: #e5eeee;
     margin: 12px 0 20px 0;
 }
+
 .about-title {
     font-size: 1.05rem;
     font-weight: 700;
     color: #102a43;
     margin-bottom: 10px;
 }
+
 .about-text {
     font-size: .86rem;
     line-height: 1.65;
     color: #64748b;
     margin-bottom: 18px;
 }
+
 .status-card {
     background: #f0fdfa;
     border: 1px solid #b8eee6;
@@ -90,24 +107,32 @@ section[data-testid="stSidebar"] > div { padding-top: 1rem; }
     font-size: .82rem;
     margin-bottom: 10px;
 }
+
 .status-card.neutral {
     background: #f8fafc;
     border-color: #e2e8f0;
     color: #64748b;
 }
-.status-dot { color: #0d9488; margin-right: 6px; }
+
+.status-dot {
+    color: #0d9488;
+    margin-right: 6px;
+}
+
 .upload-title {
     font-size: .92rem;
     font-weight: 700;
     color: #102a43;
     margin-bottom: 8px;
 }
+
 .upload-help {
     font-size: .76rem;
     line-height: 1.5;
     color: #64748b;
     margin-bottom: 10px;
 }
+
 .disclaimer {
     background: #f0fdfa;
     border: 1px solid #b8eee6;
@@ -115,17 +140,20 @@ section[data-testid="stSidebar"] > div { padding-top: 1rem; }
     padding: 14px;
     margin-top: 18px;
 }
+
 .disclaimer-title {
     font-size: .88rem;
     font-weight: 700;
     color: #087f7a;
     margin-bottom: 8px;
 }
+
 .disclaimer-text {
     font-size: .76rem;
     line-height: 1.55;
     color: #475569;
 }
+
 section[data-testid="stSidebar"] .stButton > button {
     border: 1px solid #d7e2e5;
     border-radius: 10px;
@@ -134,11 +162,13 @@ section[data-testid="stSidebar"] .stButton > button {
     font-weight: 600;
     padding: .55rem .8rem;
 }
+
 section[data-testid="stSidebar"] .stButton > button:hover {
     border-color: #14b8a6;
     color: #087f7a;
     background: #f0fdfa;
 }
+
 .hero {
     position: relative;
     overflow: hidden;
@@ -150,6 +180,7 @@ section[data-testid="stSidebar"] .stButton > button:hover {
     margin-bottom: 22px;
     box-shadow: 0 15px 35px rgba(8,127,122,.15);
 }
+
 .hero::after {
     content: "";
     position: absolute;
@@ -160,19 +191,26 @@ section[data-testid="stSidebar"] .stButton > button:hover {
     border-radius: 50%;
     background: rgba(255,255,255,.10);
 }
-.hero-content { position: relative; z-index: 2; }
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
 .hero-title {
-    color: white;
+    color: #ffffff !important;
     font-size: 2.35rem;
     font-weight: 800;
     margin: 0;
     letter-spacing: -.7px;
 }
+
 .hero-subtitle {
-    color: rgba(255,255,255,.92);
+    color: #ffffff !important;
     font-size: 1rem;
     margin-top: 8px;
 }
+
 .hero-badge {
     display: inline-block;
     margin-top: 18px;
@@ -180,31 +218,40 @@ section[data-testid="stSidebar"] .stButton > button:hover {
     border-radius: 30px;
     background: rgba(255,255,255,.13);
     border: 1px solid rgba(255,255,255,.25);
-    color: white;
+    color: #ffffff !important;
     font-size: .78rem;
     font-weight: 600;
 }
+
 .welcome-card {
-    background: white;
+    background: #ffffff;
     border: 1px solid #e3ecee;
     border-radius: 20px;
     padding: 28px 30px;
     margin-bottom: 24px;
     box-shadow: 0 8px 25px rgba(15,23,42,.05);
 }
+
 .welcome-title {
     color: #102a43;
     font-size: 1.35rem;
     font-weight: 750;
     margin-bottom: 10px;
 }
+
 .welcome-text {
     color: #64748b;
     font-size: .94rem;
     line-height: 1.7;
     margin-bottom: 18px;
 }
-.feature-row { display: flex; gap: 10px; flex-wrap: wrap; }
+
+.feature-row {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
 .feature-pill {
     display: inline-block;
     background: #f0fdfa;
@@ -215,25 +262,68 @@ section[data-testid="stSidebar"] .stButton > button:hover {
     font-size: .76rem;
     font-weight: 600;
 }
+
+/* TEXT READABILITY FIX */
+
+.stApp p,
+.stApp li,
+.stApp h1,
+.stApp h2,
+.stApp h3,
+.stApp strong,
+.stMarkdown,
+.stMarkdown p,
+.stMarkdown li {
+    color: #243447;
+}
+
+[data-testid="stChatMessageContent"],
+[data-testid="stChatMessageContent"] p,
+[data-testid="stChatMessageContent"] li,
+[data-testid="stChatMessageContent"] h1,
+[data-testid="stChatMessageContent"] h2,
+[data-testid="stChatMessageContent"] h3,
+[data-testid="stChatMessageContent"] strong {
+    color: #243447 !important;
+}
+
 [data-testid="stChatMessage"] {
     border-radius: 16px;
     margin-bottom: 12px;
 }
-[data-testid="stChatMessageContent"] { line-height: 1.65; }
+
+[data-testid="stChatMessageContent"] {
+    line-height: 1.65;
+}
+
 [data-testid="stChatInput"] {
-    background: white;
+    background: #ffffff;
     border-top: 1px solid #e5eeee;
     padding-top: 10px;
 }
-[data-testid="stChatInput"] textarea { border-radius: 16px; }
+
+[data-testid="stChatInput"] textarea {
+    border-radius: 16px;
+}
+
 @media (max-width: 768px) {
     .block-container {
         padding-left: 1rem;
         padding-right: 1rem;
     }
-    .hero { padding: 28px 24px; border-radius: 18px; }
-    .hero-title { font-size: 1.8rem; }
-    .welcome-card { padding: 22px; }
+
+    .hero {
+        padding: 28px 24px;
+        border-radius: 18px;
+    }
+
+    .hero-title {
+        font-size: 1.8rem;
+    }
+
+    .welcome-card {
+        padding: 22px;
+    }
 }
 </style>
 """,
@@ -290,8 +380,6 @@ def get_embedding_model():
 
 @st.cache_resource(show_spinner=False)
 def get_llm():
-    # Streamlit Secrets are used in deployment.
-    # Environment variables support local execution.
     try:
         api_key = st.secrets.get("GROQ_API_KEY")
     except Exception:
@@ -550,7 +638,7 @@ with st.sidebar:
             <div class="disclaimer-text">
                 “Answer from PDF” is grounded in retrieved document
                 context. “Extension from AI” is an additional explanation
-                and may use general model knowledge beyond the PDF.
+                and may use general model knowledge beyond the uploaded PDF.
             </div>
         </div>
     """)
